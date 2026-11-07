@@ -1,0 +1,179 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #fafafa;
+  color: #121212;
+  overflow-x: clip;
+  selection-background-color: #000;
+  selection-color: #fff;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================================
+       EXPERIENCE HORIZONTAL SPATIAL CANVAS
+       ============================================================ */
+#exp-horizontal-stage {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+.exp-panel {
+  will-change: transform, opacity;
+}
+.exp-date-bg {
+  will-change: transform;
+}
+@keyframes expLivingFlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.exp-living-flow {
+  animation: expLivingFlow 4.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #experience {
+    height: auto !important;
+  }
+  #exp-sticky-viewport {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #exp-horizontal-stage {
+    flex-direction: column !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+  .exp-panel {
+    width: 100% !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  .exp-living-flow {
+    animation: none !important;
+  }
+}
+
+#project-modal {
+  transition:
+    opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 380ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+#project-modal-card {
+  transition:
+    transform 440ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+/* ============================================================
+       EDITORIAL HERO TITLE
+       ============================================================ */
+/* Metallic gradient for lower text ("PORTFOLIO") only */
+.metallic-title {
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    #1a1a1a 0%,
+    #4a4a4a 35%,
+    #8e8e8e 60%,
+    #bdbdbd 85%,
+    #e5e5e5 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Portrait gradient mask so bottom of person fades cleanly into background */
+.hero-portrait-mask {
+  mask-image: linear-gradient(black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(black 65%, transparent 100%);
+}
+
+.footer-metallic-title {
+  background: linear-gradient(180deg, #ffffff 0%, #a8a8a8 50%, #444444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: filter 0.3s ease;
+}
+.footer-metallic-title:hover {
+  filter: brightness(1.2);
+}
+
+.letter-spacing-widest {
+  letter-spacing: 0.18em;
+}
+
+.pill-btn {
+  border: 1px solid #d6d6d6;
+  border-radius: 9999px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pill-btn:hover {
+  border-color: #000000;
+  transform: translateY(-1px);
+}
+
+.circle-btn {
+  border: 1px solid #d1d1d1;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+.circle-btn:hover {
+  border-color: #000;
+  transform: scale(1.08);
+  background-color: #f0f0f0;
+}
+
+/* Hero portrait mask */
+.hero-portrait-mask {
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
+
+/* Accordion transition styles */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.3s ease,
+    margin 0.3s ease;
+  opacity: 0;
+}
+.accordion-item.active .accordion-content {
+  max-height: 250px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+/* Toast animation */
+.toast-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.toast-active {
+  transform: translateY(0);
+  opacity: 1;
+}
