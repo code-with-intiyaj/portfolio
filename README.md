@@ -3,9 +3,6 @@
 Monochrome editorial portfolio for **Intiyaj Ansari**, MERN Stack & WordPress Developer.
 Content is built from the resume (`assets/Intiyaj-Ansari-Resume.pdf`).
 
-Layout, styling, animations and components come from the ECHO template by
-[Jishnu Mondal](https://github.com/Jishnu09-siuu) (MIT License).
-
 ## Sections
 
 | Section | Content |
